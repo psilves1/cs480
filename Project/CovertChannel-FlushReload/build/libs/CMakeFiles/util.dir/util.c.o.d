@@ -1,7 +1,7 @@
 libs/CMakeFiles/util.dir/util.c.o: \
- /home/psilves1/Desktop/Project/CovertChannel-FlushReload/libs/util.c \
+ /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/libs/util.c \
  /usr/include/stdc-predef.h \
- /home/psilves1/Desktop/Project/CovertChannel-FlushReload/libs/util.h \
+ /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/libs/util.h \
  /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \

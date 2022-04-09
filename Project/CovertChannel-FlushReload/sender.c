@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
 			sending = 0;
 		}
 
-		FILE *ptr = fopen("/home/psilves1/Desktop/Project/CovertChannel-FlushReload/senderFile.txt", "rb");
+		FILE *ptr = fopen("/home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/senderFile.txt", "rb");
 
 		// Convert that message to binary
 		char *msg = string_to_binary(ptr);

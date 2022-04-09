@@ -57,10 +57,10 @@ RM = /snap/cmake/1070/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/psilves1/Desktop/Project/CovertChannel-FlushReload
+CMAKE_SOURCE_DIR = /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/psilves1/Desktop/Project/CovertChannel-FlushReload/build
+CMAKE_BINARY_DIR = /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,14 +87,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/psilves1/Desktop/Project/CovertChannel-FlushReload/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/psilves1/Desktop/Project/CovertChannel-FlushReload/build/CMakeFiles /home/psilves1/Desktop/Project/CovertChannel-FlushReload/build/libs//CMakeFiles/progress.marks
-	cd /home/psilves1/Desktop/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/psilves1/Desktop/Project/CovertChannel-FlushReload/build/CMakeFiles 0
+	cd /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/build/CMakeFiles /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/build/libs//CMakeFiles/progress.marks
+	cd /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/psilves1/Desktop/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/clean
+	cd /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/clean
 .PHONY : clean
 
 # The main clean target
@@ -103,22 +103,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/psilves1/Desktop/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/preinstall
+	cd /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/psilves1/Desktop/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/preinstall
+	cd /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/psilves1/Desktop/Project/CovertChannel-FlushReload/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 libs/CMakeFiles/util.dir/rule:
-	cd /home/psilves1/Desktop/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/CMakeFiles/util.dir/rule
+	cd /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 libs/CMakeFiles/util.dir/rule
 .PHONY : libs/CMakeFiles/util.dir/rule
 
 # Convenience name for target.
@@ -127,7 +127,7 @@ util: libs/CMakeFiles/util.dir/rule
 
 # fast build rule for target.
 util/fast:
-	cd /home/psilves1/Desktop/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/util.dir/build.make libs/CMakeFiles/util.dir/build
+	cd /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/util.dir/build.make libs/CMakeFiles/util.dir/build
 .PHONY : util/fast
 
 util.o: util.c.o
@@ -135,7 +135,7 @@ util.o: util.c.o
 
 # target to build an object file
 util.c.o:
-	cd /home/psilves1/Desktop/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/util.dir/build.make libs/CMakeFiles/util.dir/util.c.o
+	cd /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/util.dir/build.make libs/CMakeFiles/util.dir/util.c.o
 .PHONY : util.c.o
 
 util.i: util.c.i
@@ -143,7 +143,7 @@ util.i: util.c.i
 
 # target to preprocess a source file
 util.c.i:
-	cd /home/psilves1/Desktop/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/util.dir/build.make libs/CMakeFiles/util.dir/util.c.i
+	cd /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/util.dir/build.make libs/CMakeFiles/util.dir/util.c.i
 .PHONY : util.c.i
 
 util.s: util.c.s
@@ -151,7 +151,7 @@ util.s: util.c.s
 
 # target to generate assembly for a file
 util.c.s:
-	cd /home/psilves1/Desktop/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/util.dir/build.make libs/CMakeFiles/util.dir/util.c.s
+	cd /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/build && $(MAKE) $(MAKESILENT) -f libs/CMakeFiles/util.dir/build.make libs/CMakeFiles/util.dir/util.c.s
 .PHONY : util.c.s
 
 # Help Target
@@ -177,6 +177,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/psilves1/Desktop/Project/CovertChannel-FlushReload/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

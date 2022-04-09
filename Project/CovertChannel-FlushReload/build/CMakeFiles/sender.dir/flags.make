@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/psilves1/Desktop/Project/CovertChannel-FlushReload/libs
+C_INCLUDES = -I/home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/libs
 
 C_FLAGS = 
 

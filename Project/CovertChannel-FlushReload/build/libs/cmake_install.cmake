@@ -1,4 +1,4 @@
-# Install script for directory: /home/psilves1/Desktop/Project/CovertChannel-FlushReload/libs
+# Install script for directory: /home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/libs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

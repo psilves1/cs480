@@ -74,8 +74,11 @@ int main(int argc, char **argv)
 			if (strcmp(msg, "exit") == 0) {
 				break;
 			}
-			*/
-			FILE *ptr = fopen("/home/psilves1/Desktop/Project/CovertChannel-FlushReload/senderFile.txt", "rb");
+			*/	
+
+
+
+			FILE *ptr = fopen("/home/psilves1/Desktop/cs480/Project/CovertChannel-FlushReload/senderFile2.txt", "rb");
 
 			char *msg = string_to_binary(ptr);
 
