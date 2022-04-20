@@ -20,7 +20,7 @@ using namespace std::chrono;
 #endif
 
 
-const char * secret_string = "hello, world!";
+const char * secret_string = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz";
 const int NUM_TROJAN_THREADS = 4;
 const int RECV_SIDE_RNGOP_CNT = 4;
 const int RECV_SIDE_PAUSE_CNT = 16;
@@ -50,6 +50,7 @@ void SYNC_START()
 
 void transmission_quality_report(string expected_str, double * probe_results, double elapsed_time)
 {
+    int accum = 0;
     int j=0;
     for(auto & c : expected_str) {
         short received = 0;
@@ -64,9 +65,18 @@ void transmission_quality_report(string expected_str, double * probe_results, do
         }
         if(!verbose) continue;
         cout << "---- received: " << (char) received <<endl;
+        char comp = (char) c;
+        char rec = (char) received;
+
+        if(comp != rec){
+            accum++;
+        }
     }
+
     
     cout << " DONE!" ;
+    float err_rate = (float) accum/ (float) expected_str.size();
+    cout << "Error Rate: " <<err_rate<< endl;
 }
 
 void prime_one(void)
@@ -233,23 +243,45 @@ int main(int argc, char**argv) {
     setup(argc,argv);
 
     if(!seperate_process) {
+        high_resolution_clock::time_point start = high_resolution_clock::now();
         elapsed_time = bcast_secret_str(msg, probe_timings);
         transmission_quality_report(secret_string,probe_timings,elapsed_time);
+        high_resolution_clock::time_point done = high_resolution_clock::now();
+        auto dur = duration_cast<duration<double>>(done-start);
+        cout << dur.count() <<" seperate-P\n" <<endl;
+        //int accum = 0;
+        //cout << msg.size() << "\n";
+        /*for(int i = 0; i < msg.size();i++){
+            if(secret_string[i] != probe_timings[i]){
+                accum++;
+            }
+
+        }*/
+        //int err_rate = accum/msg.size();
+        //cout << "Error Rate: " << err_rate <<"\n" <<endl;
         return 0;
     }
 
     if(fork() == 0) {
+        high_resolution_clock::time_point start = high_resolution_clock::now();
         //Launch concurrent trojan threads in child process
         rdy = 1; //Pretend like spy in parent process is ready
         array<future<void>, NUM_TROJAN_THREADS> trojans;
         for(int i = 0; i < NUM_TROJAN_THREADS; i++) 
             trojans[i] = async(launch::async, trojan_send_str, msg);
+        high_resolution_clock::time_point done = high_resolution_clock::now();
+        auto dur = duration_cast<duration<double>>(done-start);
+        cout << dur.count() <<" Fork\n" <<endl;
         return 0;
     }
 
     rdy = NUM_TROJAN_THREADS; //Pretend like trojans in child are ready..
+    high_resolution_clock::time_point start = high_resolution_clock::now();
     auto r1 = async(launch::async, spy_recv_str, msg.size(), probe_timings);
+    high_resolution_clock::time_point done = high_resolution_clock::now();
     elapsed_time = r1.get();
+    auto dur = duration_cast<duration<double>>(done-start);
+        cout << dur.count() << " end\n" <<endl;
     transmission_quality_report(secret_string,probe_timings,elapsed_time);
     free(probe_timings);
 }
